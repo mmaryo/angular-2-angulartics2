@@ -1,0 +1,43 @@
+@import 'src/scss/bootstrap-custom';
+
+.chip {
+    border: 2px solid transparent;
+    margin: .4em;
+    text-align: center;
+    padding: 0.2em 1em;
+    background: #eee;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+    border-radius: 7px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    box-shadow: 1px 1px 2px 1px #ddd;
+
+    input[type=radio],
+    input[type=checkbox] {
+        display: none;
+    }
+
+    &:disabled {
+        opacity: 0.6;
+    }
+
+    &:focus {
+            outline: none;
+            background-color: #ddd;
+    }
+
+    &:hover,
+    &.active {
+        // TODO
+        //&:not(:disabled) {
+            outline: none;
+            background: $brand-lighter;
+            color: #333;
+        //}
+    }
+
+    &:active {
+        background: $brand-primary;
+    }
+}

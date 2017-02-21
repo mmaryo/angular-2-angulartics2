@@ -1,0 +1,105 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'bootstrap-init';
+
+/**** BLOKK font (for mockup purpose only) ****/
+// @import 'blokk';
+
+// Put here every non-bootstrap-related variables
+// To override bootstrap variables, see _bootstrap-custom.scss
+
+@import 'chips';
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+// weird that the default stylesheet is not cursor already
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="file"]::-webkit-file-upload-button,
+button {
+  cursor: pointer;
+}
+
+// Ribbon for environment
+.corner-ribbon{
+    width: 200px;
+    position: fixed;
+    top: 25px;
+    left: -50px;
+    text-align: center;
+    line-height: 50px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    z-index: 1000;
+    box-shadow: 0 0 3px rgba(0,0,0,.3);
+
+    &.staging {
+        background: $brand-primary;
+    }
+    &.dev{
+        background: #2c7;
+    }
+}
+
+// flatpickr responsive and readonly fix
+@include media-breakpoint-down(xs) {
+    .flatpickr-calendar.open {
+        right: 0 !important;
+        left: 0 !important;
+        width: 100%;
+
+        .flatpickr-rContainer {
+            margin: 0 auto;
+        }
+        &.arrowBottom:after {
+            left: 50%;
+        }
+    }
+}
+.flatpickr-input:not([disabled]) {
+    background-color: #fff !important;
+}
+
+
+
+// card
+
+.mb-card {
+    border: none;
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+
+    .mb-card-footer {
+        img {
+            width: 45px;
+        }
+        h6 {
+            color: #444;
+        }
+        p {
+            color: #666;
+            font-size: .9rem;
+            line-height: 1.1rem;
+        }
+    }
+}
+
+// divider
+hr.small {
+    border-color: $brand-primary;
+    border-width: 2px;
+    border-radius: 50px;
+    width: 130px;
+}

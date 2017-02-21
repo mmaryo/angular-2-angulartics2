@@ -1,0 +1,42 @@
+@import 'src/scss/bootstrap-custom';
+@import '~bootstrap/scss/mixins';
+
+section {
+    position: relative;
+    height: 520px;
+    overflow: hidden;
+    @include gradient-y($brand-primary, $brand-lighter);
+
+    #video-background {
+        position: absolute;
+        width: 100%;
+        height: inherit;
+        object-fit: cover;
+    }
+
+    .taglines {
+        color: #fff;
+        text-shadow: 0 1px 2px #777;
+
+        h1 {
+            font-size: 2.7rem;
+            font-weight: 600;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+        }
+    }
+
+    .mb-bar {
+        background-color: rgba(255, 255, 255, .75);
+        color: #555;
+    }
+}
+
+@include media-breakpoint-up(md) {
+    section {
+        background-image: url(assets/pictures/promo.jpg);
+        background-position: left center;
+    }
+}
